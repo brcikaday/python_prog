@@ -14,7 +14,7 @@ home.iconphoto(True,icon)
 
 
 engine = pyttsx3.init()
-ai = genai.configure(api_key='AIzaSyBaTR5TTGxpmLZIe51_IO50cB6GBXxI7R0')
+ai = genai.configure(api_key='*****************************************')
 model = genai.GenerativeModel('gemini-1.0-pro-latest')
 
 def speak():
