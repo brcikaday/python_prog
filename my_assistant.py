@@ -1,9 +1,11 @@
 import google.generativeai as genai
+import os
 from tkinter import *
 import re
 import pyttsx3
 import customtkinter as ct
 import speech_recognition as sr
+from dotenv import load_dotenv
 
 home = ct.CTk()
 home.title("myAssistant")
@@ -12,9 +14,12 @@ ct.set_appearance_mode("dark")
 icon = PhotoImage(file = r"C:\Users\andre\Downloads\technical-support_9733214.png")
 home.iconphoto(True,icon)
 
+load_dotenv()
+
+api_key = os.getenv("API_KEY")
 
 engine = pyttsx3.init()
-ai = genai.configure(api_key='*****************************************')
+ai = genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.0-pro-latest')
 
 def speak():
